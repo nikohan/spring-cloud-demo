@@ -8,9 +8,8 @@
     <artifactId>spring-cloud-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <!--<module>demo</module>-->
-		<!--<module>config-demo</module>-->
 		<module>eureka-demo</module>
+		<module>eureka-demo-producer</module>
     </modules>
     <packaging>pom</packaging>
 

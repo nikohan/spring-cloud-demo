@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created on 2017/9/19.
  */
@@ -18,7 +20,8 @@ public class HelloController {
 
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String index() {
-		ServiceInstance instance = discoveryClient.getLocalServiceInstance();
+		List<ServiceInstance> instances = discoveryClient.getInstances("hello-service");
+		ServiceInstance instance = instances.get(0);
 		return "host:" + instance.getHost() + ", service_id:" + instance.getServiceId();
 	}
 }

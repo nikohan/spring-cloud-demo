@@ -5,7 +5,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * eureka访问地址： http://127.0.0.1:9999/eureka-demo
  * Created on 2017/9/19.
  */
 @EnableEurekaServer

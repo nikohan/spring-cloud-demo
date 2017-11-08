@@ -1,22 +1,21 @@
-package com.test.demo.eureka.producer;
+package com.test.demo.feign;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 /**
- * Created on 2017/9/19.
+ * Created on 2017/11/8.
  */
 @RestController
-public class HelloController {
+public class ConsumerController {
+
+	@Autowired
+	HelloService helloService;
 
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
-	public String index() {
-		return "hello-service: success";
+	public String helloConsumer() {
+		return helloService.hello();
 	}
 }

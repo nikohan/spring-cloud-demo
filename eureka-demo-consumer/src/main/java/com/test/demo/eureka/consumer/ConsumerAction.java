@@ -15,9 +15,9 @@ public class ConsumerAction {
 	@Autowired
 	RestTemplate restTemplate;
 
-	@RequestMapping(value = "ribbon-consumer", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String hello() {
-		String url = "http://hello-service/hello";
+		String url = "http://hello-service/eureka-producer/hello";
 		return restTemplate.getForEntity(url, String.class).getBody();
 	}
 }

@@ -12,6 +12,7 @@
 		<module>eureka-demo-producer</module>
 		<module>eureka-demo-consumer</module>
 		<module>feign-consumer</module>
+		<module>hello-service-api</module>
     </modules>
     <packaging>pom</packaging>
 

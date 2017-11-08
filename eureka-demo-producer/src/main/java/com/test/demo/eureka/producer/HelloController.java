@@ -1,22 +1,25 @@
 package com.test.demo.eureka.producer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import com.test.demo.hello.api.HelloService;
+import com.test.demo.hello.api.UserDto;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * Created on 2017/9/19.
  */
 @RestController
-public class HelloController {
+public class HelloController implements HelloService {
 
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
-	public String index() {
+	@Override
+	public String hello() {
 		return "hello-service: success";
+	}
+
+	@Override
+	public UserDto hello(@RequestParam(name = "name", required = false) Long name) {
+		UserDto userDto = new UserDto();
+		userDto.setId(name);
+		return userDto;
 	}
 }

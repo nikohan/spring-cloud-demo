@@ -2,7 +2,6 @@ package com.test.demo.eureka.producer;
 
 import com.test.demo.hello.api.HelloService;
 import com.test.demo.hello.api.UserDto;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,7 +16,7 @@ public class HelloController implements HelloService {
 	}
 
 	@Override
-	public UserDto hello(@RequestParam(name = "name", required = false) Long name) {
+	public UserDto hello(Long name) {
 		UserDto userDto = new UserDto();
 		userDto.setId(name);
 		return userDto;

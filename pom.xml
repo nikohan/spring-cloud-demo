@@ -16,30 +16,6 @@
     </modules>
     <packaging>pom</packaging>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.6.RELEASE</version>
-	</parent>
-
-
-	<properties>
-		<spring.version>4.3.9.RELEASE</spring.version>
-		<spring.cloud.version>Dalston.SR3</spring.cloud.version>
-	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring.cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
     <!-- Package as an executable JAR -->
     <build>
         <plugins>
@@ -52,10 +28,6 @@
                     <target>1.8</target>
                     <encoding>UTF8</encoding>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

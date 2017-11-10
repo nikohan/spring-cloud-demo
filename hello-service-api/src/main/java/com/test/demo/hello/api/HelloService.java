@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
+ *	使用示例，添加如下接口
+ * 	//@FeignClient(Const.Hello_Service_Prefix)
+ *	public interface HelloServiceClient extends HelloService {
+ *	}
  * Created on 2017/11/8.
  */
 public interface HelloService {
